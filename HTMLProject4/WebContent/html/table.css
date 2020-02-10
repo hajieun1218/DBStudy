@@ -36,6 +36,9 @@
 #table_content .tdcenter{
 	text-align: center;
 }
+#table_content .tdright{
+	text-align: right;
+}
 #table_content a{
 	text-decoration: none;
 	color:black;
