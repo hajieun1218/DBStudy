@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- 
+	CSS
+	  = 외부 CSS => .css 파일
+	  	<link href=".css">
+	  = 내부 CSS
+	  	<head>
+	  		<style>
+	  		</style>
+	  	</head>
+	  = 인라인 CSS
+	  	<h1 style="">
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/* h1,h2,h3,h4,h5,h6{
+	color: blue;
+	background-color: yellow;
+	font-family: 맑은고딕;
+} */
+
+/* Selector (선택자) */
+.h{
+	color: blue;
+	background-color: yellow;
+	font-family: 맑은고딕;
+}
+
+#hh{
+	color: red;
+	background-color: cyan;
+	font-family: 맑은고딕;
+}
+</style>
+</head>
+<body>
+	<!-- 
+		속성: 값;
+		(속성=> 사용자 정의는 없고 지정된 속성만 사용이 가능)
+	 -->
+	 <!-- 하나만 바꾸면 id, 여러개 동시에 바꾸면 class -->
+	<h1 id="hh">Hello CSS!!</h1>
+	<h1 class="h">Hello CSS!!</h1>
+	<h1>Hello CSS!!</h1>
+	<h1>Hello CSS!!</h1>
+	<h1 class="h">Hello CSS!!</h1>
+	<h1>Hello CSS!!</h1>
+</body>
+</html>
