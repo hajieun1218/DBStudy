@@ -185,6 +185,7 @@ public class BoardDAO {
 			vo.setRegdate(rs.getDate(5));
 			vo.setHit(rs.getInt(6));
 			
+			rs.close();
 		} 
 		catch (Exception ex) {
 			System.out.println(ex.getMessage());
@@ -197,10 +198,135 @@ public class BoardDAO {
 	}
 	
 	// 3) 추가하기 ==> INSERT
+	public void boardInsert(BoardVO vo) {
+		try {
+			getConnection();
+			String sql="INSERT INTO board(no,name,subject,content,pwd) "
+					  +"VALUES((SELECT NVL(MAX(no)+1,1) FROM board),?,?,?,?)";
+			ps=conn.prepareStatement(sql);
+			// 실행전에 ?에 값을 채운다
+			ps.setString(1, vo.getName());
+			ps.setString(2, vo.getSubject());
+			ps.setString(3, vo.getContent());
+			ps.setString(4, vo.getPwd());
+			// 실행
+			ps.executeUpdate(); //commit포함
+		} catch(Exception ex) {
+			System.out.println(ex.getMessage());
+		} finally {
+			disConnection();
+		}
+	}
 	
 	// 4) 수정하기 ==> UPDATE
+	// 입력했던 값 가져오기
+	public BoardVO boardUpdateData(int no)
+	{
+		BoardVO vo=new BoardVO();
+		try {
+			getConnection();
+			
+			// 2-1) 조회수 증가시킴 
+			String sql="SELECT no,name,subject,content " //끝에 띄어쓰기 잊지 말기..!
+					+"FROM board "
+					+"WHERE no=?";
+			ps=conn.prepareStatement(sql);
+			// ?에 값을 채운다
+			ps.setInt(1, no);
+			// 실행 요청 
+			ResultSet rs = ps.executeQuery();
+			rs.next();
+			
+			vo.setNo(rs.getInt(1));
+			vo.setName(rs.getString(2));
+			vo.setSubject(rs.getString(3));
+			vo.setContent(rs.getString(4));
+			
+			rs.close();
+			
+		} 
+		catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		}
+		finally
+		{
+			disConnection();
+		}
+		return vo; 
+	}
+	
+	// 실제 수정 ==> UPDATE ~ SET
+	public boolean boardUpdate(BoardVO vo) {
+		boolean bCheck=false;
+		try {
+			getConnection();
+			String sql="SELECT pwd FROM board "
+					  +"WHERE no=?";
+			ps=conn.prepareStatement(sql);
+			ps.setInt(1, vo.getNo());
+			ResultSet rs=ps.executeQuery();
+			rs.next();
+			String db_pwd=rs.getString(1);
+			rs.close();
+			
+			if(db_pwd.equals(vo.getPwd())) {
+				bCheck=true;
+				sql="UPDATE board SET "
+				   +"name=?,subject=?,content=? "
+				   +"WHERE no=?";
+				ps=conn.prepareStatement(sql);
+				ps.setString(1, vo.getName());
+				ps.setString(2, vo.getSubject());
+				ps.setString(3, vo.getContent());
+				ps.setInt(4, vo.getNo());
+				
+				// 실행
+				ps.executeUpdate();
+			}
+			else {
+				bCheck=false;
+			}
+		} catch(Exception ex) {
+			System.out.println(ex.getMessage());
+		} finally {
+			disConnection();
+		}
+		return bCheck;
+	}
 	
 	// 5) 삭제하기 ==> DELETE
+	public boolean boardDelete(int no, String pwd) {
+		boolean bCheck=false;
+		try {
+			getConnection();
+			String sql="SELECT pwd FROM board "
+					  +"WHERE no=?";
+			ps=conn.prepareStatement(sql);
+			ps.setInt(1, no);
+			ResultSet rs=ps.executeQuery();
+			rs.next();
+			String db_pwd=rs.getString(1);
+			rs.close();
+			
+			if(db_pwd.equals(pwd)) {
+				bCheck=true;
+				sql="DELETE FROM board "
+				   +"WHERE no=?";
+				ps=conn.prepareStatement(sql);
+				ps.setInt(1, no);
+				// 실행
+				ps.executeUpdate();
+			}
+			else {
+				bCheck=false;
+			}
+		} catch(Exception ex) {
+			System.out.println(ex.getMessage());
+		} finally {
+			disConnection();
+		}
+		return bCheck;
+	}
 	
 	// 6) 찾기 ==> SELECT ~ LIKE 
 	

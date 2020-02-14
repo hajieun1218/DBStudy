@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- 
+	외부 CSS : 파일
+		<link rel="stylesheet" href="css파일명">
+	내부 CSS : 
+		<head>
+			<style type="text/css">
+			</style>
+		</head>
+	INLINE CSS :
+		<div style="">
+	
+	1) 외부,내부 CSS
+		1. 선택자(Selector) : CSS 적용할 태그를 찾는다 => Jquery, Jsoup 
+			= tag : a, p, div, ...
+			
+				tag명{속성:값;속성:값;속성:값;...}
+				(속성=> 미리 정의가 되어있다)
+				
+			= ID명 (중복이 없는 명칭) => 한번만 사용이 가능
+				<div id="a b"> (X) 
+				
+				#ID명 {속성:값;속성:값;속성:값;...}
+				
+			= Class명 (중복이 있는 경우) => 여러개 사용이 가능
+				<div class="a b c"> (O) => 디자인을 두번 처리할 때
+					.a{
+					} 
+					.b{
+					}
+					<div class="a"></div>
+					<div class="a"></div>
+					<div class="a b"></div>
+					
+				.class명 {속성:값;속성:값;속성:값;...}
+				
+			= 전체 : *(모든태그) => 글꼴,...
+				*{속성:값;속성:값;속성:값;...}
+			
+			= 가상선택자
+				a:hover
+				h1:nth-child(2n) => 짝수
+			= 소속
+			= 여러개 태그, 클래스, 아이디명
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div{
+	width: 100px;
+	height: 100px;
+}
+#aa{
+	border: 5px solid green;
+}
+#bb{
+	border: 5px dotted green;
+}
+#cc{
+	border: 5px dashed green;
+}
+#dd{
+	border: 5px double green;
+}
+#ee{
+	border: 5px groove green;
+}
+#ff{
+	border: 5px ridge green;
+}
+#aaa{
+	padding: 20px; /*20px 30px 20px 20px*/
+	/* top left bottom right
+	   padding: 20px 10px 30px
+	   			=> right : 10px
+	   padding : 20px 30px
+	   			=> 20px 30px 20px 30px
+	   padding-left, padding-right, padding-top, padding-bottom
+	   
+	   6pt 8px 0.5em 
+	*/
+	border: 1px solid black;
+}
+
+</style>
+</head>
+<body>
+	<div id="aaa">Box Model</div>
+	<div id="aa"></div>
+	<div id="bb"></div>
+	<div id="cc"></div>
+	<div id="dd"></div>
+	<div id="ee"></div>
+	<div id="ff"></div>
+</body>
+</html>

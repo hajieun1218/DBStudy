@@ -79,17 +79,18 @@ public class BoardListServlet extends HttpServlet {
 		}
 		out.println("</table>");
 		
+		out.println("<form method=post action=BoardFind>");
 		out.println("<table id=\"table_content\" width=700>");
 		out.println("<tr>");
 		out.println("<td align=left>");
 		out.println("Search:");
-		out.println("<select>");
-		out.println("<option>이름</option>");
-		out.println("<option>제목</option>");
-		out.println("<option>내용</option>");
+		out.println("<select name=fs>");
+		out.println("<option value=name>이름</option>");   // 보여주는건 이름, 넘겨주는건name
+		out.println("<option value=subject>제목</option>");
+		out.println("<option value=content>내용</option>");
 		out.println("</select>");
-		out.println("<input type=text size=15>");
-		out.println("<input type=button value=찾기>");
+		out.println("<input type=text name=ss size=15>");
+		out.println("<input type=submit value=찾기>");
 		out.println("</td>");
 		out.println("<td align=right>");
 		/*
