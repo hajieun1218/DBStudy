@@ -1,6 +1,8 @@
 package com.sist.servlet;
 
 import java.io.*;
+import java.util.StringTokenizer;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.sist.dao.*;
+import com.sun.org.apache.xml.internal.serializer.utils.StringToIntTable;
 
 @WebServlet("/Login")
 public class Login extends HttpServlet {
@@ -94,10 +97,13 @@ public class Login extends HttpServlet {
 			// 다른화면으로 바뀌면 메모리 회수(request,response는 지역변수) => 초기화
 			//   => 서버에 저장하기 위해 session사용(로그아웃,브라우저껐을때,30분후에 끊어짐)  ==> 예약,장바구니
 			HttpSession session=request.getSession(); // 세션 생성
+			
 			// id, name 저장
 			// session은 object저장 가능 =>ArrayList저장 가능 , 쿠키는 String만 저장가능
 			session.setAttribute("id", id); // 키,값 ==> Map
-			session.setAttribute("name", result);
+			StringTokenizer st=new StringTokenizer(result,"|");
+			session.setAttribute("name", st.nextToken());
+			session.setAttribute("sex", st.nextToken());
 			
 			// 파일이동
 			response.sendRedirect("MusicList");
