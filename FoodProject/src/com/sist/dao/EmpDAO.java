@@ -27,6 +27,7 @@ public class EmpDAO {
 	 *    	}
 	 *    }
 	 */
+	// 미리 만들어 놓고 주소값을 가져와서 사용
 	public void getConnection() {
 		try {
 			
@@ -44,6 +45,8 @@ public class EmpDAO {
 	
 	// Connection 반환
 	public void disConnection() {
+		// ps,conn 닫으면 자동으로 반환
+		// close => 컴파일exception => 반드시 try~catch문
 		try {
 			if(ps!=null)
 				ps.close();
@@ -57,10 +60,10 @@ public class EmpDAO {
 		ArrayList<EmpVO> list=new ArrayList<EmpVO>();
 		try {
 			getConnection(); // 사용할 Connection 주소를 얻어온다
-//			String sql="SELECT empno,ename,job,hiredate,sal,dname,loc "
-//					  +"FROM emp,dept "
-//					  +"WHERE emp.deptno=dept.deptno";
-			String sql="SELECT * FROM emp_dept";
+			String sql="SELECT empno,ename,job,hiredate,sal,dname,loc "
+					  +"FROM emp,dept "
+					  +"WHERE emp.deptno=dept.deptno";
+//			String sql="SELECT * FROM emp_dept";
 			ps=conn.prepareStatement(sql);
 			ResultSet rs=ps.executeQuery();
 			while(rs.next()) {
