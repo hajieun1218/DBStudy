@@ -53,7 +53,7 @@ public class ReleasedServlet extends HttpServlet {
 				
 			out.println("<div class=\"col-md-3\">");
 			out.println("<div class=\"thumbnail\">");
-			out.println("<a href=\"#\">");
+			out.println("<a href=\"MainServlet?mode=7&mno="+vo.getMno()+"\">");
 			out.println("<img src=\""+vo.getPoster()+"\" alt=\"Lights\" style=\"width:100%\">");
 			out.println("</a>");
 			out.println("<div class=\"caption\">");

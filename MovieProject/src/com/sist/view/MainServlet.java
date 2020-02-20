@@ -42,6 +42,9 @@ public class MainServlet extends HttpServlet {
 		case 6:
 			sname="YearlyServlet";
 			break;
+		case 7:
+			sname="MovieDetailServlet";
+			break;
 		}
 	
 		out.println("<html>");
