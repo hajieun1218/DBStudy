@@ -51,7 +51,7 @@ public class FoodMainServlet extends HttpServlet {
 			out.println("<div class=\""+color+"\">");
 			out.println("<div class=\"panel-heading\">"+vo.getTitle()+"<br>"+vo.getSubject()+"</div>");
 			out.println("<div class=\"panel-body\">");
-			out.println("<a href=\"FoodCateListServlet?cno="+vo.getCateno()+"\">");
+			out.println("<a href=\"FoodListServlet?cno="+vo.getCateno()+"\">");
 			out.println("<img src=\""+vo.getPoster()+"\" width=100% class=img-rounded>");
 			out.println("</a>");
 			out.println("</div>");

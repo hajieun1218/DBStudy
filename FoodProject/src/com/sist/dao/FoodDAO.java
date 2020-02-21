@@ -5,6 +5,8 @@ import javax.naming.*;
 import javax.sql.*;
 import com.sist.manager.*;
 
+import javafx.geometry.Pos;
+
 public class FoodDAO {
 
 	private Connection conn;
@@ -125,6 +127,131 @@ public class FoodDAO {
 				vo.setPoster(rs.getString(4));
 				list.add(vo);
 			} 
+			rs.close();
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			disConnection();
+		}
+		return list;
+	}
+	
+	public ArrayList<FoodHouseVO> foodHouseListData(int cno) {
+		ArrayList<FoodHouseVO> list=new ArrayList<FoodHouseVO>();
+		try {
+			/*
+			 *    JDBC / DBCP
+			 *     1) 연결
+			 *     2) SQL전송
+			 *     3) 결과값 받기
+			 *     4) 닫기
+			 */
+			getConnection();
+			String sql="SELECT image,title,score,address,no "
+					  +"FROM foodhouse "
+					  +"WHERE cno=?";
+			ps=conn.prepareStatement(sql);
+			ps.setInt(1, cno);
+			ResultSet rs=ps.executeQuery();
+			while(rs.next()) {
+				FoodHouseVO vo=new FoodHouseVO();
+				String img=rs.getString(1);
+				vo.setImage(img.substring(0,img.indexOf("^")));
+				vo.setTitle(rs.getString(2));
+				vo.setScore(rs.getDouble(3));
+				vo.setAddress(rs.getString(4));
+				vo.setNo(rs.getInt(5));
+				
+				list.add(vo);
+			}
+			rs.close();
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			disConnection();
+		}
+		return list;
+	}
+	
+	// category 데이터
+	public CategoryVO categoryInfoData(int cno) {
+		CategoryVO vo=new CategoryVO();
+		try {
+			getConnection();
+			String sql="SELECT title,subject "
+					  +"FROM category "
+					  +"WHERE cateno=?";
+			ps=conn.prepareStatement(sql);
+			ps.setInt(1, cno);
+			ResultSet rs=ps.executeQuery();
+			rs.next();
+			vo.setTitle(rs.getString(1));
+			vo.setSubject(rs.getString(2));
+			rs.close();
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			disConnection();
+		}
+		return vo;
+	}
+	
+	// 상세보기
+	public FoodHouseVO foodDetailData(int no) {
+		FoodHouseVO vo=new FoodHouseVO();
+		try {
+			getConnection();
+			String sql="SELECT image,title,score,address,tel,type,price,good,soso,bad "
+					  +"FROM foodhouse "
+					  +"WHERE no=?";
+			ps=conn.prepareStatement(sql);
+			ps.setInt(1, no);
+			ResultSet rs=ps.executeQuery();
+			rs.next();
+			vo.setImage(rs.getString(1));
+			vo.setTitle(rs.getString(2));
+			vo.setScore(rs.getDouble(3));
+			vo.setAddress(rs.getString(4));
+			vo.setTel(rs.getString(5));
+			vo.setType(rs.getString(6));
+			vo.setPrice(rs.getString(7));
+			vo.setGood(rs.getInt(8));
+			vo.setSoso(rs.getInt(9));
+			vo.setBad(rs.getInt(10));
+			rs.close();
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			disConnection();
+		}
+		return vo;
+	}
+	
+	// 같은 동 음식점 가져오기 => 주변 인기식당
+	public ArrayList<FoodHouseVO> foodLocationData(String loc) {
+		ArrayList<FoodHouseVO> list=new ArrayList<FoodHouseVO>();
+		try {
+			getConnection();
+			String sql="SELECT image,title,score,address,tel,type,price,rownum "
+					  +"FROM (SELECT image,title,score,address,tel,type,price "
+					  		+"FROM foodhouse "
+					  		+"WHERE address LIKE '%'||?||'%' "
+					  		+"ORDER BY score DESC) "
+					  +"WHERE rownum<=5";
+			ps=conn.prepareStatement(sql);
+			ps.setString(1, loc);
+			ResultSet rs=ps.executeQuery();
+			while(rs.next()) {
+				FoodHouseVO vo=new FoodHouseVO();
+				vo.setImage(rs.getString(1));
+				vo.setTitle(rs.getString(2));
+				vo.setScore(rs.getDouble(3));
+				vo.setAddress(rs.getString(4));
+				vo.setTel(rs.getString(5));
+				vo.setType(rs.getString(6));
+				vo.setPrice(rs.getString(7));
+				list.add(vo);
+			}
 			rs.close();
 		} catch(Exception ex) {
 			ex.printStackTrace();
