@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	/*
+		선택자[속성] {  } : 속성명이 있는 태그를 선택
+		선택자[속성="값"] {  } : 속성 값과 value가 일치하는 태그 선택
+		선택자[속성$="값"] {  } : 속성 값과 value에 해당하는 문자가 끝나는 태그 선택
+		선택자[속성^="값"] {  } : 속성 값과 value에 해당하는 문자가 시작하는 태그 선택
+		선택자[속성*="값"] {  } : 속성 값과 value에 해당하는 문자가 포함하는 태그 선택
+		
+		선택자[속성|="값"] {  } : 속성 값과 value에 해당하는 문자가 시작하는 태그 선택 (IE8 VersionUp)
+		선택자[속성~="값"] {  } : 속성 값과 value에 해당하는 문자가 포함하는 태그 선택 (IE8 VersionUp)
+	*/
+	
+	#two > input[type]{
+		color: orange;
+	}
+	
+	#two > input[type="text"]{
+		font-size: 20px;
+	}
+	
+	#two > label{
+		color: blue;
+	}
+	
+	#one > span[id^="complex"]{
+		/* 시작문자   	선택자[속성|="값"] */
+		color: blue;
+	}
+	
+	#one > span[id$="text1"]{
+		/* 끝문자 */
+		font-size: 20px;
+	}
+	
+	#one > span[id*="text"]{
+		/* 포함문자 	선택자[속성~="값"] */
+		background-color: yellow;
+	}
+	
+</style>
+</head>
+<body>
+	<div id="one">
+		<span id="simpletext1">SIMPLETEXT1</span>
+		<span id="simpletext2">SIMPLETEXT2</span>
+		<span id="complextext1">COMPLEXTEXT1</span>
+		<span id="complextext2">COMPLEXTEXT2</span>
+		<span id="complex">COMPLEX</span>
+	</div>
+	<br><br>
+	
+	<form id="two">
+		<label>이름</label>
+		<input type="text"><br><br>
+		
+		<label>아이디</label>
+		<input type="text"><br><br>
+		
+		<label>패스워드</label>
+		<input type="password"><br><br>
+		
+		<label>전화번호</label>
+		<input type="tel"><br>
+	</form>
+	<br><br>
+	
+	<img width="200" height="100" alt="이미지 준비중입니다.">
+	
+</body>
+</html>
