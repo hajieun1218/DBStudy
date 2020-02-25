@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>OverFlow</title>
+<style type="text/css">
+
+	/*  밑으로 내려갈때는 overflow안해도 자식에 맞게 크기가 늘어남
+	
+		float: right; 를 하면 깨져서 위로 올라감 
+		--> overflow: hidden; 사용
+	 */
+
+	#row1{
+		width: 500px; 
+		margin: 0px auto;
+		border: 5px solid #dddddd;
+	}
+	
+	#row1 > #first{
+		width: 100px; height: 100px; 
+		margin: 5px;
+		border: 5px solid #cccccc;
+	}
+	
+	#row1 > #second{
+		width: 100px; height: 100px; 
+		margin: 5px;
+		border: 5px solid #cccccc;
+	}
+	
+	
+	#row2{
+		width: 500px; 
+		margin: 0px auto; margin-top:2px;
+		border: 5px solid #dddddd;
+		overflow: hidden;
+	}
+	
+	#row2 > #first{
+		width: 100px; height: 100px; 
+		margin: 5px;
+		border: 5px solid #cccccc;
+		float: right;
+	}
+	
+	#row2 > #second{
+		width: 100px; height: 100px; 
+		margin: 5px;
+		border: 5px solid #cccccc;
+		float: right;
+	}
+	
+</style>
+</head>
+<body>
+    <div id="row1">
+        <div id="first">first</div>
+        <div id="second">second</div>
+    </div>
+
+    <div id="row2">
+        <div id="first">first</div>
+        <div id="second">second</div>
+    </div>
+</body>
+</html>

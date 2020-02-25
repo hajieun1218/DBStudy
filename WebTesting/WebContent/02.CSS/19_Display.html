@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>속성</title>
+<style type="text/css">
+	div{
+		width: 100px; height: 100px;
+	}
+	
+	div:NTH-CHILD(1) {
+		background-color: #FF0000;
+		color: #FFFFFF;
+		text-align: center;
+		border: 5px solid #FF8D00;
+		box-sizing: content-box;   /* 밖으로 그린다 (default)  */
+	}
+	
+	div:NTH-CHILD(2) {
+		background-color: #00FF00;
+		color: #000000;
+		text-align: center;
+		border: 5px solid #FF8D00;
+		margin-top: 10px;
+		box-sizing: border-box;  /* 안으로 그린다 */
+	}
+	
+	div:NTH-CHILD(7) {
+		background-color: #0000FF;
+		color: #FF00FF;
+		text-align: center;
+		border: 5px solid #FF8D00;
+		display: inline;
+	}
+	
+	div:NTH-CHILD(8) {
+		background-color: #FF00FF;
+		color: #FFFFFF;
+		text-align: center;
+		border: 5px solid #FF8D00;
+		margin-top: 10px;
+		
+		display: inline-block;
+	}
+	
+	div:NTH-CHILD(9) {
+		background-color: #FF00FF;
+		color: #FFFFFF;
+		text-align: center;
+		border: 5px solid #FF8D00;
+		margin-top: 10px;
+		
+		display: inline-block;
+	}
+	
+</style>
+</head>
+<body>
+	<div>content1</div>
+	<div>content2</div>
+	<div>content3</div>
+	<div>content4</div>
+	<div>content5</div>
+	<div>content6</div>
+	<div>content7</div>
+	<div>content8</div>
+	<div>content9</div>
+</body>
+</html>

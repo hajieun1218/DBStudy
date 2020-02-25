@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#sub{
+		border: solid 2px cyan;
+		width: 500px; height: 350px;
+		margin: 0px auto;
+	}
+	
+	#sub > .apple{
+		border: solid 2px blue;
+		width: 450px; height: 40px;
+		margin: 0px;
+	}
+	
+	#sub > .apple > li{
+		border: solid 1px #dddddd;
+		width: 100px; height: 30px; background-color: #EFEFEF;
+		float: left; margin: 0px;
+		
+		font-size: 12px; color: #777777;
+		list-style-type: none; text-align: center; line-height: 30px;
+	}
+	
+	#sub > .banana{
+		border: solid 1px red;
+		width: 200px; height: 200px;
+		margin: 30px 0px 0px 0px;
+	}
+	
+	#sub > .banana > dt{
+		border: solid 1px blue;
+		width: 200px; height: 30px;
+		margin: 0px; background-color: skyblue;
+		
+		font-size: 12px; text-align: left; line-height: 30px;
+	}
+	
+	#sub > .banana > dd{
+		border: solid 1px #FF3366;
+		width: 150px; height: 30px;
+		background-color: #FFCC33;
+		
+		margin: 0px; font-size: 12px; 
+		text-align: center; line-height: 30px;
+	}
+	
+</style>
+</head>
+<body>
+	<div id="sub">
+		<ul class="apple">
+			<li>첫번째 메뉴</li>
+			<li>두번째 메뉴</li>
+			<li>세번째 메뉴</li>
+			<li>네번째 메뉴</li>
+		</ul>
+		
+		<dl class="banana">
+			<dt>바나나</dt>
+				<dd>바나나 쥬스</dd>
+				<dd>바나나 빵</dd>
+			<dt>사과</dt>
+				<dd>사과 쥬스</dd>
+				<dd>사과 빵</dd>
+		</dl>
+	</div>
+</body>
+</html>

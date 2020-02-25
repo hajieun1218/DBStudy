@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style type="text/css">
+
+	/* position: static;  --> 기본값, 순차적으로 쌓인다  */
+	
+	div{
+		width: 100px; height: 100px;
+		margin-left: 10px; margin-top: 10px;
+		position: static;  
+	}
+	
+	div:NTH-CHILD(1) {
+		background-color: red;
+	}
+	
+	div:NTH-CHILD(2) {
+		background-color: green;
+	}
+	
+	div:NTH-CHILD(3) {
+		background-color: blue;
+	}
+	
+</style>
+</head>
+<body>
+   	<div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	/* 0 ~ 1 : 투명도 */
+	
+	ul > li{
+		width: 200px; height: 100px;
+		text-align: center; background-color: red;
+		display: inline-block;
+	}
+	
+	ul > li:NTH-CHILD(2) {
+		opacity: 0.7;
+	}
+	
+	ul > li:NTH-CHILD(3) {
+		opacity: 0.2;
+	}
+</style>
+</head>
+<body>
+	<ul>
+		<li>코로나 이겨내자!!</li>
+		<li>3월 버티자!!!</li>
+		<li>그리고 취업하자!!!</li>
+	</ul>
+</body>
+</html>
