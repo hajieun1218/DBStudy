@@ -3,6 +3,79 @@
 <head>
 <meta charset="UTF-8">
 <title>웹포트</title>
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text|Indie+Flower|Lacquer|Oxanium&display=swap" rel="stylesheet">
+<style type="text/css">
+	header{
+		width: 90%; height: 300px; margin: 0px auto;
+		border: 1px solid #CCCCCC;
+		/* overflow: hidden; */
+	}
+	
+	header > #gnb{
+		width: 600px; 
+		border: 0px solid blue;
+		float: left;
+	}
+	
+	header > #lnb{
+		width: 600px; 
+		border: 0px solid red;
+		float: right;
+		
+		position: relative; top: 200px;
+	}
+	
+	header li{
+		list-style-type: none;
+	}
+	
+	header a{
+		text-decoration: none;	
+		font-family: 'Oxanium';
+	}
+	
+	header > #gnb li, header > #lnb li{
+		border: 1px dotted #CCCCCC;
+		width: 100px; height: 30px;
+		text-align: center;
+		line-height: 30px;
+		float: left;
+	}
+	
+	#content{
+		width: 90%; margin: 2px auto;
+		border: 1px solid #CCCCCC;
+		overflow: hidden;
+	}
+	
+	#content > #section, #aside{
+		height: 600px;
+		border: 1px solid #CCCCCC;
+		float: left;
+		
+		font-weight: bold; margin: 5px; font-size: 1.2em;
+	}
+	
+	#content > #section{
+		width: 80%; 
+		font-family: 'Lacquer';
+	}
+	
+	#content > #aside{
+		width: 18%; 
+		font-family: 'Indie Flower';
+	}
+	
+	footer{
+		width: 90%; height: 200px;
+		border: 1px solid #CCCCCC;
+		margin: 2px auto;
+		font-weight: bold; font-size: 2.0em; text-align: center;
+		font-family: 'Crimson Text';
+	}
+	
+	
+</style>
 </head>
 <body>
  	<header>

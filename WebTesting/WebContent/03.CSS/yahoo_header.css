@@ -1,0 +1,68 @@
+@CHARSET "UTF-8";
+
+*{margin: 0px;}
+a{text-decoration: none;}
+li{list-style-type: none;}
+
+header{
+	border: 1px solid #CCCCCC;
+	width: 100%; 
+}
+
+header > #header_nav{
+	width: 100%; background-color: #2D1152;
+	border: 0px solid blue;
+	overflow: hidden;
+}
+
+header > #header_nav > .list li{
+	font-size: 0.9em; color: #FFFFFF;
+	height: 30px; line-height: 30px;
+	float: left;
+	/* 옆에 계속 붙을거면 width안줘도 됨 -> 대신 margin으로 간격 조정 */
+	margin-right: 20px;
+}
+
+header > #header_nav > .fireFox{
+	height: 30px; line-height: 30px;
+	float: right;
+	color: #FFFFFF;
+	margin-right: 20px;
+}
+
+header > #header_info{
+	width: 1024px; 
+	border: 0px solid yellow;
+	margin: 30px auto;
+	overflow: hidden;
+}
+
+header > #header_info > div{
+	float: left;
+}
+
+header > #header_info > .search > input[type="text"]{
+	width: 400px; height: 30px;
+	font-size: 20px;
+	border: 1px solid #3488D9;
+	margin-top: 10px; margin-left: 10px;
+}
+
+header > #header_info > .search > input[type="button"]{
+	width:120px; height: 35px;
+	background-image: url("./../images/yahoo_search_btn.png");
+	color: #FFFFFF; font-size: 1.2em;
+}
+
+header > #header_info > .service li{
+	float: left; margin-right: 15px;
+	height: 50px; line-height: 50px;
+}
+
+
+
+
+
+
+
+

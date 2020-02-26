@@ -1,0 +1,93 @@
+@CHARSET "UTF-8";
+
+*{margin: 0px; paddingL 0px;}
+a{text-decoration: none;}
+li{list-style-type: none;}
+
+/*--------------------- gnb ---------------------*/
+
+header{
+ 	width: 100%; overflow: hidden;
+}
+
+header > .gnb{
+	width: 100%; background-color: #333333;
+}
+
+header > .gnb > ul{
+	width: 1020px; height: 50px; line-height: 50px;
+	margin: 0px auto;
+}
+
+header > .gnb li{
+	float: left; margin-left: 50px;
+	font-size: .9em;	
+}
+
+header > .gnb a{
+	color: #FFFFFF;
+}
+
+/*---------------------- logo -----------------------*/
+
+header > .logo{
+	width: 200px; height: 100px;
+	border: 1px solid #CCCCCC;
+	text-align: center; line-height: 100px;
+	margin: 50px auto;
+}
+
+/*---------------------- hit_menu -----------------------*/
+
+header > .hit_menu > ul{
+	width: 1000px; 
+	border: 0px solid #CCCCCC;
+	overflow: hidden; margin: 0px auto;
+}
+
+header > .hit_menu li{
+	width: 100px; height: 45px; float: right; 
+	text-align: center; line-height: 45px;
+	border: 1px solid #CCCCCC;
+	border-right-width: 0px;
+}
+
+header > .hit_menu li:NTH-CHILD(1){
+	/* 위왼쪽 위오른쪽 아래오른쪽 아래왼쪽  (시계방향) */
+	border-radius: 0px 10px 10px 0px;
+}
+
+header > .hit_menu li:NTH-CHILD(4){
+	/* 위왼쪽 위오른쪽 아래오른쪽 아래왼쪽  (시계방향) */
+	border-radius: 10px 0px 0px 10px;
+}
+
+header > .hit_menu a{
+	color: #282828; font-size: 1.1em;
+}
+
+/*---------------------- lnb -----------------------*/
+
+header > .lnb{
+	width: 100%;
+	border: 1px solid #CCCCCC;
+	margin-top: 5px;
+	border-top-style: dashed;
+}
+
+header > .lnb > ul{
+	width: 1000px; border: 0px solid red;
+	margin: 0px auto;
+	overflow: hidden;
+}
+
+header > .lnb li{
+	border: 0px solid blue; margin:5px;
+	float: left; width: 100px; height: 50px;
+	line-height: 50px; text-align: center;
+}
+
+header > .lnb a{
+	color: #282828; font-size: 1.2em;
+}
+

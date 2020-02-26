@@ -4,11 +4,49 @@
 <head>
 <meta charset="UTF-8">
 <title>외부 글꼴</title>
+<style type="text/css">
+	#wrap{
+		width: 800px; margin: 0px auto;
+		border: 0px solid red;
+		overflow: hidden;
+	}
+	
+	#wrap > ul > li{
+		width: 140px; height: 60px;
+		border: 1px solid #CCCCCC;
+		list-style-type: none; float: left;
+		
+		text-align: center; line-height: 60px;
+		font-size: 1.5m; color: #FFFFFF;
+		font-weight: bold;
+		
+		border-left-width: 0px;
+		
+		/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#829bbf+0,d1a30c+51,ed490e+100 */
+		background: rgb(130,155,191); /* Old browsers */
+		background: -moz-linear-gradient(top,  rgba(130,155,191,1) 0%, rgba(209,163,12,1) 51%, rgba(237,73,14,1) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top,  rgba(130,155,191,1) 0%,rgba(209,163,12,1) 51%,rgba(237,73,14,1) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom,  rgba(130,155,191,1) 0%,rgba(209,163,12,1) 51%,rgba(237,73,14,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#829bbf', endColorstr='#ed490e',GradientType=0 ); /* IE6-9 */
+		
+	}
+	
+	/* https://www.colorzilla.com/gradient-editor/ */
+	#wrap > ul > li:HOVER {
+		/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#63b6db+0,e29536+99 */
+		background: rgb(99,182,219); /* Old browsers */
+		background: -moz-linear-gradient(top,  rgba(99,182,219,1) 0%, rgba(226,149,54,1) 99%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top,  rgba(99,182,219,1) 0%,rgba(226,149,54,1) 99%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom,  rgba(99,182,219,1) 0%,rgba(226,149,54,1) 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#63b6db', endColorstr='#e29536',GradientType=0 ); /* IE6-9 */
+	}
+	
+</style>
 </head>
 <body>
   <div id="wrap">
         <ul>
-            <li>menu1</li>
+            <li style="border-left-width: 1px;">menu1</li>
             <li>menu2</li>
             <li>menu3</li>
             <li>menu4</li>

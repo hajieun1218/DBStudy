@@ -1,0 +1,78 @@
+@CHARSET "UTF-8";
+
+footer{
+	width: 1024px;
+	margin: 5px auto 0px;
+	overflow: hidden;
+}
+
+footer > div{
+	float: left; height: 100px;
+	text-align: center; line-height: 100px;
+	border: 1px solid #CCCCCC; box-sizing: border-box;
+	border-left-width: 0px;
+}
+
+footer > div:NTH-CHILD(1) {
+	width: 215px;
+	border-left-width: 1px;
+}
+
+footer > div:NTH-CHILD(2) {
+	width: 498px;
+}
+
+footer > div:NTH-CHILD(3) {
+	width: 300px;
+}
+
+footer > div:NTH-CHILD(4) {
+	clear: both;      /* float 지운다 */
+	width: 1024px; height: 50px; margin: 10px auto 0px;
+	background-color: #333333; color: #FFFFFF;
+	line-height: 50px; border-width: 0px;
+}
+
+
+
+
+
+
+
+
+
+/* 
+footer > .office_info > ul{
+	height: 100px;
+	border: 1px solid red;
+}
+
+footer > .office_info li{
+	text-align: center; line-height: 100px;
+	float: left;
+	border: 1px solid #CCCCCC;
+	border-left-width: 0px;
+}
+
+footer > .office_info li:NTH-CHILD(1){
+	width: 24%;
+	border-left-width: 1px;
+}
+
+footer > .office_info li:NTH-CHILD(2){
+	width: 45%;
+}
+
+footer > .office_info li:NTH-CHILD(3){
+	width: 30%;
+}
+
+footer > div:
+
+
+footer > .copyright{
+	width: 1024px; height: 50px;
+	background-color: #333333; color: #FFFFFF;
+	text-align: center; line-height: 50px;
+	margin-top: 10px;
+} */
