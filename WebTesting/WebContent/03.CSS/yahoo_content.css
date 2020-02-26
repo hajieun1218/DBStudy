@@ -24,7 +24,7 @@
 #content > #main > div{ 
 	border: 1px solid #CCCCCC;	width: 645px;
 	margin-top: 10px;
-}
+} 
 
 #content > #main > div:NTH-CHILD(1) {
 	height: 350px;
