@@ -1,0 +1,101 @@
+@CHARSET "UTF-8";
+
+#content{
+	width: 100%;
+	border: 0px solid red;
+	
+}
+
+#content > #div_1{
+	width: 100%;
+}
+
+#content > #div_1 > #theme{
+	overflow: hidden;
+	width: 1024px;
+	margin: 50px auto;
+	border: 0px solid blue;
+}
+
+#content > #div_1 > #theme > .theme_title {
+	text-align: center; font-size: 30px;
+}
+#content > #div_1 > #theme > .line {
+	width: 60px; height: 2px;
+	border: 1px solid #CC3D3D; background-color: #CC3D3D;
+	margin: 0px auto;
+	margin-top: 15px;
+}
+
+
+
+
+#content > #div_1 > #theme > .theme_1{
+	background-image: url("./../images/foodleImages/theme1.jpg");
+}
+#content > #div_1 > #theme > .theme_2 > div:NTH-CHILD(1){
+	background-image: url("./../images/foodleImages/theme2.jpg");
+}
+#content > #div_1 > #theme > .theme_2 > div:NTH-CHILD(2){
+	background-image: url("./../images/foodleImages/theme3.jpg");
+}
+#content > #div_1 > #theme > .theme_3 > div:NTH-CHILD(1){
+	background-image: url("./../images/foodleImages/theme4.jpg");
+}
+#content > #div_1 > #theme > .theme_3 > div:NTH-CHILD(2){
+	background-image: url("./../images/foodleImages/theme5.jpg");
+}
+
+
+#content > #div_1 > #theme > .theme_1,
+#content > #div_1 > #theme > .theme_2,
+#content > #div_1 > #theme > .theme_3{
+	float: left;
+	width: 310px; height: 500px;
+	border: 0px solid red;
+	margin: 14px;
+	margin-top: 50px;
+}
+
+#content > #div_1 > #theme > .theme_1,
+#content > #div_1 > #theme > .theme_2 > div,
+#content > #div_1 > #theme > .theme_3 > div{
+	border: 1px solid #CCCCCC;
+}
+
+#content > #div_1 > #theme > .theme_2 > div:NTH-CHILD(1),
+#content > #div_1 > #theme > .theme_3 > div:NTH-CHILD(2){
+	width: 310px; height: 300px;
+}
+
+#content > #div_1 > #theme > .theme_2 > div:NTH-CHILD(2),
+#content > #div_1 > #theme > .theme_3 > div:NTH-CHILD(1){
+	width: 310px; height: 170px;
+}
+
+#content > #div_1 > #theme > .theme_2 > div:NTH-CHILD(2){
+	margin-top: 26px;
+}
+
+#content > #div_1 > #theme > .theme_3 > div:NTH-CHILD(2){
+	margin-top: 26px;
+}
+
+
+#content > #div_1 > #theme > .theme_1 label,
+#content > #div_1 > #theme > .theme_2 label,
+#content > #div_1 > #theme > .theme_3 label{
+	display: inline-block;
+	border: 0px solid blue;
+	font-size: 23px;
+	margin-top: 20px; margin-left: 20px;
+	color: #FFFFFF;
+}
+
+#content > #div_1 > #theme > .theme_1 label small,
+#content > #div_1 > #theme > .theme_2 label small,
+#content > #div_1 > #theme > .theme_3 label small{
+	font-size: 15px;
+	color: #FFFFFF;
+}
+

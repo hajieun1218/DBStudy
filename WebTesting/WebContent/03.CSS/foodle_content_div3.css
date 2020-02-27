@@ -1,0 +1,75 @@
+@CHARSET "UTF-8";
+
+#content > #div_3{
+	width:100%;
+}
+
+#content > #div_3 > #realtime{
+	width: 1024px; 
+	border: 0px solid red;
+	margin: 0px auto; margin-bottom: 70px;
+}
+
+#content > #div_3 > #realtime > .realtime_title{
+	text-align: center;
+	font-size: 30px;
+	
+}
+
+#content > #div_3 > #realtime > .line {
+	width: 60px; height: 2px;
+	border: 1px solid #CC3D3D; background-color: #CC3D3D;
+	margin: 0px auto;
+	margin-top: 15px; margin-bottom: 50px;
+}
+
+#content > #div_3 > #realtime > .r_top1,
+#content > #div_3 > #realtime > .r_top2,
+#content > #div_3 > #realtime > .r_top3,
+#content > #div_3 > #realtime > .r_top4,
+#content > #div_3 > #realtime > .r_top5{
+	border: 0px solid blue;
+	width: 1000px; height: 250px;
+	background-color: #F6F6F6;
+	margin: 0px auto;
+	margin-bottom: 25px;
+	overflow: hidden;
+}
+
+#content > #div_3 > #realtime img{
+	float: left;
+	width: 370px; margin-right: 30px;
+}
+
+#content > #div_3 > #realtime input{
+	float: right;
+	height: 35px;
+	margin-top: 40px; margin-right: 5px;
+	font-size: 16px; font-weight: bold;
+	background-color: #FFFFFF;
+	border: 1px solid #CCCCCC; outline: 0px;
+}
+
+#content > #div_3 > #realtime input:NTH-CHILD(1){
+	width: 40px;
+}
+
+#content > #div_3 > #realtime input:NTH-CHILD(2){
+	margin-right: 25px; width: 100px
+}
+
+
+#content > #div_3 > #realtime li:NTH-CHILD(1) {
+	margin-top: 40px;
+	font-size: 25px; font-weight: bold;
+}
+
+#content > #div_3 > #realtime li:NTH-CHILD(2){
+	margin-top: 10px; margin-right: 20px;
+	font-size: 14px; font-weight: bold;
+}
+
+#content > #div_3 > #realtime li:NTH-CHILD(2) ~ li{
+	margin-top: 12px;
+	font-size: 15px; color: #747474;
+}
