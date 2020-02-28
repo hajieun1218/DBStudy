@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function sub(){
+		window.alert("sub function()"); // 내장객체
+		// window. 은 생략 가능
+		
+		/* var w=mew Window();
+		   w.alert("hahahaha");  */
+	}
+	
+	function dblSub(){
+		window.alert("dblSub function임!!!")
+	}
+	
+	function aa(){
+		var value=window.prompt("원하는 숫자를 넣으세요", "정수형 1~10까지 수만 입력");
+		window.alert(value);
+	}
+	
+	function bb(){
+		var result=window.confirm("정말로 삭제하시겠습니까?");
+		// alert(result);
+		if(result==true){
+			window.alert("삭제되었습니다.");
+		}
+		else{
+			window.alert("취소되었습니다.");
+		}
+	}
+	
+	function cc(a, b, str){
+		var r=a+","+b+","+str;
+		alert(r);
+	}
+	
+	function dd(obj){
+		obj.type="text";
+		obj.style.color="red";
+		obj.style.fontSize="20px";  // 대소문자 구분!
+									// 대소문자 구분 안하는 html,css는 _ 사용  (font_size)
+	}
+	
+	function bigText(obj){
+		obj.style.color="blue";
+		obj.style.fontSize="40px";
+	}
+	
+	function normalText(obj){
+		obj.style.color="red";
+		obj.style.fontSize="9px";
+	}
+	
+</script>
+</head>
+<body>
+	<input type="button" value="확인합니다.^^" onclick="sub()"/>
+	<br/><br/>
+	
+	<a href="#">
+		<span onclick="sub()">마우스를 클릭하세요.</span>
+	</a>
+	<br/><br/>
+	
+	<input type="button" value="확인01" onmousedown="sub()"/>
+	<input type="button" value="확인02" onmouseup="sub()"/>
+	<input type="button" value="확인03" ondblclick="dblSub()"/>
+	<br/><br/>
+	
+	<input type="button" value="확인04" onclick="aa()"/>
+	<input type="button" value="확인05" onclick="bb()"/>
+	<input type="button" value="확인06" onclick="cc(10, 20, 'apple')"/> <!-- 바깥이 큰따옴표면 안에는 작은따옴표 써야함 -->
+	<br/><br/>
+	
+	<input type="button" value="확인07" onclick="dd(this)"/> <!-- this ==> 확인7의 input이 넘어감 -->
+	<br/><br/>
+	
+	<a href="#" style="text-decoration: none;">
+		<span style="font-size: 20px;" onmouseover="bigText(this)" onmouseout="normalText(this)">
+			안녕하세요.
+		</span>
+	</a>
+</body>
+</html>

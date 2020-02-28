@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// 자료형(숫자(정수,실수), 문자(문자,문자열))
+	var su=10;
+	var value=22.5;
+	var hap=su+value;
+	
+	var str='apple';
+	var b="apple";
+	
+	// document: body ,  document.write() => body 에 출력해라
+	document.write("<h2>"+hap+"</h2>");
+	document.write("<h2>"+str+"</h2>");
+	document.write("<h2>"+b+"</h2>");
+	
+	// 조건문 if(if, if~else, else if), switch ==> 자바랑 똑같다
+	if(su>20){
+		document.write("<h2>20보다 큰 수 입니다.</h2>");
+	} else if(su>30) {
+		document.write("<h2>30보다 큰 수 입니다.</h2>");
+	} else if(su>50) {
+		document.write("<h2>50보다 큰 수 입니다.</h2>");
+	} else {
+		document.write("<h2>20보다 작은 수 입니다.</h2>");
+	}
+	
+	// 반복문 for, while, do~while ==> 자바랑 똑같다
+	for(var i=0;i<10;i++){
+		document.write("<h3>"+i+". 반복문 입니다.</h3>")
+	}
+	
+	// 배열
+	var suArr=[1,2,3];
+	var strArr=["apple","banana","melon"];
+	document.write("<h3>"+suArr[0]+","+strArr[2]+"</h3>");
+	
+	for(var i=0;i<suArr.length;i++){
+		document.write("<h3>"+suArr[i]+"</h3>");
+	}
+	document.write("<br/><br/>");
+	
+</script>
+</head>
+<body>
+	<pre>
+		1. HTML : 웹 페이지를 제작하기 위한 도구
+		2. CSS : HTML 표현
+		3. JavaScript : HTML을 통제(컨트롤)하고 유용하게 활용한다.
+			3-1) 자바스크립트 구성
+				1) CORE : 기본문법구조, 데이터 타입, 조건문, 반복문, 함수, 기본 라이브러리 등 포함
+				2) BOM(Browser Object Model) : 브라우저와 관련된 객체 (Window, Location, History, Screen 등)
+				3) DOM(Document Object Model) : Element(태그), Style, Attribute, Event 등을 제어한다
+				
+	</pre>
+	
+	<script type="text/javascript">
+		// 주석
+	</script>
+	
+	<div></div>
+</body>
+</html>
